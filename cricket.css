@@ -1,3 +1,6 @@
+body{
+    background-color: rgba(96, 140, 170, 0.674);
+}
 .bat{
     text-transform: uppercase;
     margin-left: 10px;
@@ -24,6 +27,8 @@ img{
     width: 50px;
 }
 button{
+    border-radius: 10px;
+    cursor: pointer;
     margin-top: 10px;
 }
 #userMove{
@@ -34,4 +39,11 @@ button{
 }
 #score{
     color: rgba(101, 5, 5, 0.923);
+}
+.reset{
+    border-radius: 0px;
+    font-weight: 600;
+    font-size: large;
+    font-style: oblique;
+    cursor: pointer;
 }
