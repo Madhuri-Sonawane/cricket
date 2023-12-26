@@ -6,19 +6,25 @@
 </head>
 <body>
     <H1> bat ball stumps game</H1>
-    <div class="cricket">
+   <div class="cricket">
     <button class="bat" onclick="
     
    let computerchoice= generatecomputerchoice();
    let resultmsg =getresult('bat', computerchoice);
    showResult('bat',computerchoice, resultmsg);
-    ">bat</button>
+    ">
+    <img src="https://img.freepik.com/premium-vector/cricket-bat-vector-illustration_110233-79.jpg?w=2000" 
+    alt="bat image" class="image">
+    </button>
     <button class="bat"
     onclick="
        computerchoice= generatecomputerchoice();
     resultmsg =getresult('ball', computerchoice);
     showResult('ball',computerchoice, resultmsg);
-    ">ball</button>
+    ">
+<img src="https://media.istockphoto.com/id/181668903/vector/shiny-red-traditional-cricket-ball.jpg?s=612x612&w=0&k=20&c=FrODP12OH_uCIhzpa9oChPu6l--5h5BBLgnkJy9n5sg="
+ alt="ball image" class="image">    
+</button>
     <button class="bat" 
     onclick="
    computerchoice= generatecomputerchoice();
@@ -26,11 +32,24 @@
     showResult('stump',computerchoice, resultmsg);
   
   "
-    >stump</button>
+    >
+<img src="https://media.istockphoto.com/id/1152243128/vector/cricket-gate-for-a-sports-game-stock-vector-illustration.jpg?s=612x612&w=0&k=20&c=gyvfT6Udf3TjRPrdPPgO5ZU8xn0oSqnNWQ8dPMemnbE="
+ alt="stump image" class="image">
+</button>
 
-    <button onclick="localStorage.clear()
-   resetscore( );
-    ">RESET</button>
+   
+    </div>
+    <div class="cricket">
+    <button class="bat" onclick="localStorage.clear()
+    resetscore();
+     ">RESET</button>
+     </div>
+   <h1 id="userMove"></h1> <br>
+   <h1 id="computerMove"></h1><br>
+   <h1 id="result"></h1><br>
+   <h1 id="score"></h1><br>
+
+
     <script>
         let scorestr= localStorage.getItem('score');
         let score;
@@ -43,13 +62,15 @@
         tie:0,
        
     };
-        }
+        
    
    
     score.displayscore = function() {
-        return `No of matches Won:${score.win}, lost:${score.lost}, tie:${score.tie}`;
-            
+        return `Score: Won:${score.win}, lost:${score.lost}, tie:${score.tie}`;
+           
         };
+        showResult();
+        }
 
        function generatecomputerchoice(){
         let randomNumber = Math.random()*3;
@@ -113,16 +134,18 @@
        
 function showResult(userMove,computerMove,resultmsg){
  localStorage.setItem('score',JSON.stringify(score));
-
-    alert(`'you choose ${userMove}' computer choice is ${computerMove}' and ${resultmsg}
-    ${score.displayscore()}
-    `);
-
+ document.querySelector('#userMove').innerText =
+ userMove  ? `you choose ${userMove}`: 'make a choice';
+ document.querySelector('#computerMove').innerText = 
+ computerMove  ? `computer choice is ${computerMove}`: '';
+document.querySelector('#result').innerText =
+resultmsg ? resultmsg : '';
+document.querySelector('#score').innerText =score.displayscore();
 }
 
-       
+        
 
     </script>
-</div>
+
 </body>
 </html> 

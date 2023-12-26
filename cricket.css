@@ -8,6 +8,7 @@
 H1{
     text-transform: uppercase;
     text-align: center;
+    color: rgb(226, 55, 43);
 }
 .cricket{
     justify-content: center;
@@ -15,4 +16,22 @@ H1{
 
    width: 100%;
       display: flex;
+}
+
+
+img{
+    height: 50px;
+    width: 50px;
+}
+button{
+    margin-top: 10px;
+}
+#userMove{
+    color: rgb(15, 117, 40);
+}
+#computerMove{
+    color: rgb(15, 124, 59);
+}
+#score{
+    color: rgba(101, 5, 5, 0.923);
 }
